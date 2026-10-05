@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>할 일 목록</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>할 일</h1>
+      <p class="today" id="today"></p>
+    </header>
+
+    <form class="new-todo" id="new-todo-form" autocomplete="off">
+      <input id="new-todo-text" type="text" placeholder="무엇을 해야 하나요?" maxlength="200" aria-label="새 할 일" required>
+      <input id="new-todo-due" type="date" aria-label="마감일 (선택)">
+      <button type="submit">추가</button>
+    </form>
+
+    <section class="toolbar" aria-label="필터">
+      <label class="toggle-all">
+        <input type="checkbox" id="toggle-all">
+        <span>모두 완료</span>
+      </label>
+      <div class="filters" role="tablist">
+        <button type="button" data-filter="all" role="tab">전체</button>
+        <button type="button" data-filter="active" role="tab">진행 중</button>
+        <button type="button" data-filter="done" role="tab">완료</button>
+      </div>
+    </section>
+
+    <ul class="todo-list" id="todo-list"></ul>
+    <p class="empty" id="empty"></p>
+
+    <footer class="app-footer">
+      <span id="count"></span>
+      <button type="button" class="link" id="clear-done">완료 항목 삭제</button>
+    </footer>
+
+    <p class="hint">더블클릭으로 수정 · Enter 저장 · Esc 취소</p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
